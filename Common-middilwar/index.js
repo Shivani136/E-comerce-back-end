@@ -26,7 +26,7 @@ exports.requireSignin = (req, res, next) => {
 
   exports.adminMiddliware = (req, res, next) => {
     if(req.user.role !== 'admin'){
-        return res.status(400).json({message :'Access Denied'})
+        return res.status(400).json({message :'Admin Access Denied'})
     }
    next();
 }
