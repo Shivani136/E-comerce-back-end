@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const db = require("./models");
+const path = require('path');
+const cors = require('cors');
 
 //routes
 const authRoutes =  require("./routes/auth")
@@ -26,7 +28,11 @@ mongoose
     process.exit();
   });
 
+app.use(cors())
+
+  // apply middleware
 app.use(express.json())
+app.use('/public', express.static(path.join(__dirname , 'uploads')))
 //app.use(bodyParser());
 
 app.use('/api',authRoutes)

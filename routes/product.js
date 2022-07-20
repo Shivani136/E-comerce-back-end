@@ -4,7 +4,6 @@ const { requireSignin,adminMiddliware } = require("../Common-middilwar");
 const { addProduct } = require("../Controllers/product");
 const router = express.Router();
 const multer = require('multer');
-// const upload = multer({ dest : 'uploads/'})
 const shortid = require('shortid')
 const path = require('path');
 
